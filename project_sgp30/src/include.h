@@ -16,6 +16,8 @@
 
 void SetSysClk(void);
 
+int Initial();
+
 uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t BaudRate);
 void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_t BaudRate);
 void uart2_init();

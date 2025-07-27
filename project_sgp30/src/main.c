@@ -4,21 +4,28 @@
 #include "include.h"
 #include "debug/debug_logs.h"
 #include "i2c/i2c.h"
-#include "sensor/sgp30_driver/sgp30.h"
+#include "sgp30_driver/sgp30.h"
+#include "am2302/am2302.h"
 
 typedef struct {
     uint16_t co2_ppm;
     uint16_t tvoc_ppb;
-    uint8_t status;
+    uint16_t ah;
 } SGP30_Data_t;
 
+typedef struct {
+    float humidity;
+    float temperature;
+} AM2302_Data_t;
+
 SGP30_Data_t air_quality;
+AM2302_Data_t am2302;
 
 int Initial();
 
 int main(void)
 {
-	char buf[50]={0};
+	char buf[LOG_LENGH]={0};
 	check_pass(Initial(),"Initial");
 
 	uart2_write_string("-----------------------\n\r");
