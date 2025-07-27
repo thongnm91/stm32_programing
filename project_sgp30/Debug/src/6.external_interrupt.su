@@ -1,0 +1,2 @@
+core_cm3.h:1452:22:NVIC_EnableIRQ	16	static
+6.external_interrupt.c:3:6:pc13_exti_init	8	static

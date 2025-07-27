@@ -1,0 +1,5 @@
+sgp30.c:19:6:sgp30_read_address	16	static
+sgp30.c:25:6:sgp30_write	24	static
+sgp30.c:32:6:sgp30	16	static
+sgp30.c:38:6:sgp30_init	16	static
+sgp30.c:55:9:sgp30_measure_air_quality	24	static

@@ -1,0 +1,4 @@
+sgp30_function.c:7:5:Write_Cmd	16	static
+sgp30_function.c:21:5:Read_Data	24	static
+sgp30_function.c:47:9:crc	32	static
+sgp30_function.c:56:5:Write_Data	24	static
