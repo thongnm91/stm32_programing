@@ -112,9 +112,10 @@ int am2302Request(uint8_t *array){
 		for(i=0;i<4;i++){
 			array[i]=ar[i];
 		}
-		return 1;
+		return DONE;
 	}
-	return 0;
+	else
+		return FAIL;
 }
 
 
@@ -132,7 +133,7 @@ int am2302Request(uint8_t *array){
  * 		1. Format data and save in an array
  * 		2. Uart2 write string
  * */
-void am2302ShowUart2(uint8_t* am2302) {
+int  am2302ShowUart2(uint8_t* am2302) {
 	uint16_t h = 0x0000, t = 0x0000;
 	char minus = '0';
 	char buffer[20]={'\0'};
@@ -148,5 +149,21 @@ void am2302ShowUart2(uint8_t* am2302) {
   //Write UART2
   sprintf(buffer, "%d,%d %%RH  %c%d,%d °C\n\r", h/10,h%10,minus,t/10,t%10);
   uart2_write_string(buffer);
-}
 
+  return DONE;
+}
+int AM2302_Read_Data(float* humidity, float* temperature, uint8_t* data){
+	uint16_t h = 0x0000, t = 0x0000;
+	//Read humidity
+	  h = ((data[0]&0xFFFF)<<8) | (data[1]&0xFFFF);
+
+	  //Check minus template
+	  int minus = (data[2]>>7)? -1 : 1;
+	  //Read temperature
+	  t = ((data[2]&0xFF7F)<<8) | (data[3]&0xFFFF); //&0xFF7F to remove minus
+
+	  *humidity = h/10.0;
+	  *temperature = (t/10.0) * minus;
+
+	  return DONE;
+}

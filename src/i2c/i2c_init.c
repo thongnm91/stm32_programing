@@ -110,7 +110,7 @@ int I2C1_Init() {
 
     I2C1->CR2 = I2C1->CR2 = I2C_CR2_FREQ_5;	// 32MHz PCLK1
     I2C1->CCR = 160;                       // 100kHz SCL
-    I2C1->TRISE = I2C1->TRISE = 32;        // Max rise time
+    I2C1->TRISE = I2C1->TRISE = 33;        // Max rise time
 
     I2C1->CR1 |= I2C_CR1_PE;              // Enable I2C
 
@@ -139,7 +139,7 @@ int I2C1_Init() {
 /*Set max rise time TRISE
  * What formula?
  * maximum rise time in sm mode = 1000ns. Equation 1000 ns/TPCK1
- * 1000ns/31,25ns=32
+ * 1000ns/31,25ns=32 +1 = 33
  * p.693
  * */
 /*END -----------v1.1-----------*/
