@@ -30,15 +30,9 @@ SOFTWARE.
 /* Includes */
 #include <stddef.h>
 #include "stm32l1xx.h"
-
-
-/* Private typedef */
-/* Private define  */
-/* Private macro */
-/* Private variables */
-/* Private function prototypes */
-/* Private functions */
-
+#include "debug_log/debug_logs.h"
+#include "uart2/uart2.h"
+#include "i2c/i2c.h"
 
 /**
 **===========================================================================
@@ -52,22 +46,16 @@ int main(void)
   int i = 0;
 
   /**
-  *  IMPORTANT NOTE!
-  *  See the <system_*.c> file and how/if the SystemInit() function updates 
-  *  SCB->VTOR register. Sometimes the symbol VECT_TAB_SRAM needs to be defined 
-  *  when building the project if code has been located to RAM and interrupts 
-  *  are used. Otherwise the interrupt table located in flash will be used.
-  *  E.g.  SCB->VTOR = 0x20000000;  
+   * 1. Integrate sgp30 I2C
   */
 
 
-  /* TODO - Add your application code here */
 
 
   /* Infinite loop */
   while (1)
   {
-    i++;
+
   }
   return 0;
 }
