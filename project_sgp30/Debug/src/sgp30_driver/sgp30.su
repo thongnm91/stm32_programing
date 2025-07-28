@@ -1,5 +1,0 @@
-sgp30.c:3:5:SGP30_Init	8	static
-sgp30.c:13:5:SGP30_Measure	24	static
-sgp30.c:39:5:SGP30_Get_Baseline	24	static
-sgp30.c:61:5:SGP30_Get_Feature_Ver	24	static
-sgp30.c:81:5:SGP30_Set_Humidity	32	static

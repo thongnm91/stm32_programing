@@ -1,6 +1,0 @@
-uart2.c:12:10:compute_uart_bd	16	static
-uart2.c:16:6:uart_set_baudrate	24	static
-uart2.c:20:6:uart2_tx_init	8	static
-uart2.c:46:6:uart2_write	16	static
-uart2.c:54:6:uart2_write_string	24	static
-uart2.c:62:6:uart2_read	4	static

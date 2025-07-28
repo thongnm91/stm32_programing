@@ -1,2 +1,0 @@
-1_systick.c:2:6:systickDelayMs	24	static
-1_systick.c:14:6:systickDelayUs	24	static

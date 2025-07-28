@@ -1,4 +1,0 @@
-am2302.c:52:5:am2302Request	24	static
-am2302.c:135:6:am2302ShowUart2	80	static
-am2302.c:153:5:AM2302_ABS_HUM	56	static
-am2302.c:158:5:AM2302_MEASURE	40	static

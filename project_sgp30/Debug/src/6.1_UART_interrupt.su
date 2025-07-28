@@ -1,2 +1,0 @@
-core_cm3.h:1452:22:NVIC_EnableIRQ	16	static
-6.1_UART_interrupt.c:12:6:uart2_rx_interrupt_init	8	static
