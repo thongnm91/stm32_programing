@@ -70,6 +70,8 @@ int main(void)
 	char buf[LOG_LENGH]={0};
 	check_pass(Initial(),"Initial");
 
+	uart2_write_string("---------------------\n\r");
+
 	/*
 	 * 1. AM2302 TEMPER/HUMI - 1-wire
 	 *
