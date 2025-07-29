@@ -1,0 +1,278 @@
+01:19:55 **** Rebuild of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\tiny_printf.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\tiny_printf.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5.1_timer_output_toggle_compare.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.1_timer_output_toggle_compare.o 
+arm-atollic-eabi-gcc -c ..\src\system_stm32l1xx.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\system_stm32l1xx.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_write_command.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_write_command.o 
+arm-atollic-eabi-gcc -c ..\src\adc\3_adc0.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\3_adc0.o 
+arm-atollic-eabi-gcc -c ..\src\system_clock\pllclk_32MHz.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\system_clock\pllclk_32MHz.o 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -g -Wa,--warn -x assembler-with-cpp -specs=nano.specs -o src\startup_stm32l152xe.o ..\src\startup_stm32l152xe.s 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_init.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_init.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\ds1621\ds1621.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\ds1621\ds1621.o 
+arm-atollic-eabi-gcc -c ..\src\timer\1_systick.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\1_systick.o 
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.1_UART_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.1_UART_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.external_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.external_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5.2_timer_input_capture.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.2_timer_input_capture.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+..\src\main.c:7:39: fatal error: sensor/sgp30_driver/sgp30.h: No such file or directory
+ #include "sensor/sgp30_driver/sgp30.h"
+                                       ^
+compilation terminated.
+01:20:05 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\uart\uart2.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\uart\uart2.o 
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30_function.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30_function.o 
+..\src\sgp30_driver\sgp30_function.c: In function 'Write_Cmd':
+..\src\sgp30_driver\sgp30_function.c:11:2: warning: implicit declaration of function 'I2C_Clear_AddrFlag' [-Wimplicit-function-declaration]
+  I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+  ^~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_functions.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_functions.o 
+..\src\i2c\i2c_functions.c: In function 'I2C_Write_Addr':
+..\src\i2c\i2c_functions.c:147:23: warning: unused variable 'temp' [-Wunused-variable]
+     volatile uint32_t temp = I2C1->SR2;  // Clear ADDR p691
+                       ^~~~
+arm-atollic-eabi-gcc -c ..\src\debug\debug_logs.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\debug\debug_logs.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5_timer_autoreload.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5_timer_autoreload.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_read_data.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_read_data.o 
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -c ..\src\gpio\7.gpio.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\gpio\7.gpio.o 
+arm-atollic-eabi-gcc -c ..\src\debug\conv_int_ascii.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\debug\conv_int_ascii.o 
+arm-atollic-eabi-gcc -c ..\src\adc\4_calculate_ADC_sensor.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\4_calculate_ADC_sensor.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sgp30_driver\sgp30_function.o: In function `Write_Cmd':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:11: undefined reference to `I2C_Clear_AddrFlag'
+src\sgp30_driver\sgp30_function.o: In function `Read_Data':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:28: undefined reference to `I2C_Clear_AddrFlag'
+collect2.exe: error: ld returned 1 exit status
+01:21:44 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30_function.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30_function.o 
+..\src\sgp30_driver\sgp30_function.c: In function 'Write_Cmd':
+..\src\sgp30_driver\sgp30_function.c:11:2: warning: implicit declaration of function 'I2C_Clear_AddrFlag' [-Wimplicit-function-declaration]
+  I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+  ^~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ..\src\adc\4_calculate_ADC_sensor.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\4_calculate_ADC_sensor.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5.1_timer_output_toggle_compare.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.1_timer_output_toggle_compare.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5.2_timer_input_capture.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.2_timer_input_capture.o 
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30.o 
+arm-atollic-eabi-gcc -c ..\src\uart\uart2.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\uart\uart2.o 
+arm-atollic-eabi-gcc -c ..\src\timer\1_systick.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\1_systick.o 
+arm-atollic-eabi-gcc -c ..\src\adc\3_adc0.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\3_adc0.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_functions.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_functions.o 
+..\src\i2c\i2c_functions.c: In function 'I2C_Write_Addr':
+..\src\i2c\i2c_functions.c:147:23: warning: unused variable 'temp' [-Wunused-variable]
+     volatile uint32_t temp = I2C1->SR2;  // Clear ADDR p691
+                       ^~~~
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.1_UART_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.1_UART_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.external_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.external_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_init.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_init.o 
+arm-atollic-eabi-gcc -c ..\src\debug\debug_logs.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\debug\debug_logs.o 
+arm-atollic-eabi-gcc -c ..\src\gpio\7.gpio.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\gpio\7.gpio.o 
+arm-atollic-eabi-gcc -c ..\src\system_clock\pllclk_32MHz.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\system_clock\pllclk_32MHz.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5_timer_autoreload.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5_timer_autoreload.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sgp30_driver\sgp30_function.o: In function `Write_Cmd':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:11: undefined reference to `I2C_Clear_AddrFlag'
+src\sgp30_driver\sgp30_function.o: In function `Read_Data':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:28: undefined reference to `I2C_Clear_AddrFlag'
+collect2.exe: error: ld returned 1 exit status
+01:22:21 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30_function.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30_function.o 
+..\src\sgp30_driver\sgp30_function.c: In function 'Write_Cmd':
+..\src\sgp30_driver\sgp30_function.c:11:2: warning: implicit declaration of function 'I2C_Clear_AddrFlag' [-Wimplicit-function-declaration]
+  I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+  ^~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ..\src\timer\5.1_timer_output_toggle_compare.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.1_timer_output_toggle_compare.o 
+arm-atollic-eabi-gcc -c ..\src\sgp30_driver\sgp30.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sgp30_driver\sgp30.o 
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\adc\4_calculate_ADC_sensor.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\4_calculate_ADC_sensor.o 
+arm-atollic-eabi-gcc -c ..\src\debug\debug_logs.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\debug\debug_logs.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5.2_timer_input_capture.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5.2_timer_input_capture.o 
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.external_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.external_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\uart\uart2.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\uart\uart2.o 
+arm-atollic-eabi-gcc -c ..\src\gpio\7.gpio.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\gpio\7.gpio.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_functions.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_functions.o 
+..\src\i2c\i2c_functions.c: In function 'I2C_Write_Addr':
+..\src\i2c\i2c_functions.c:147:23: warning: unused variable 'temp' [-Wunused-variable]
+     volatile uint32_t temp = I2C1->SR2;  // Clear ADDR p691
+                       ^~~~
+arm-atollic-eabi-gcc -c ..\src\interrupt\6.1_UART_interrupt.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\interrupt\6.1_UART_interrupt.o 
+arm-atollic-eabi-gcc -c ..\src\system_clock\pllclk_32MHz.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\system_clock\pllclk_32MHz.o 
+arm-atollic-eabi-gcc -c ..\src\adc\3_adc0.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\adc\3_adc0.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\main.o 
+arm-atollic-eabi-gcc -c ..\src\timer\5_timer_autoreload.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\5_timer_autoreload.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\timer\1_systick.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\timer\1_systick.o 
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_init.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_init.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sgp30_driver\sgp30_function.o: In function `Write_Cmd':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:11: undefined reference to `I2C_Clear_AddrFlag'
+src\sgp30_driver\sgp30_function.o: In function `Read_Data':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sgp30_driver/sgp30_function.c:28: undefined reference to `I2C_Clear_AddrFlag'
+collect2.exe: error: ld returned 1 exit status
+01:29:48 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\i2c\i2c_functions.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\i2c\i2c_functions.o 
+..\src\i2c\i2c_functions.c: In function 'I2C_Write_Addr':
+..\src\i2c\i2c_functions.c:147:23: warning: unused variable 'temp' [-Wunused-variable]
+     volatile uint32_t temp = I2C1->SR2;  // Clear ADDR p691
+                       ^~~~
+..\src\i2c\i2c_functions.c: In function 'I2C_Clear_AddrFlag':
+..\src\i2c\i2c_functions.c:165:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:32:21 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:33:02 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:34:33 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:34:39 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:35:12 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:35:21 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+..\src\sensor\am2302\am2302.c:52:19: error: unknown type name 'uint8_t'
+ int am2302Request(uint8_t *array){
+                   ^~~~~~~
+..\src\sensor\am2302\am2302.c:135:22: error: unknown type name 'uint8_t'
+ void am2302ShowUart2(uint8_t* am2302) {
+                      ^~~~~~~
+01:35:35 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:35:46 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -c ..\src\sensor\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\sensor\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sensor\am2302\am2302.o src\sensor\ds1621\ds1621.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302Request'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+src\sensor\am2302\am2302.o: In function `am2302Request':
+C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\sensor\am2302/am2302.c:52: multiple definition of `am2302ShowUart2'
+src\am2302\am2302.o:C:\Users\thong\Atollic\TrueSTUDIO\stm32_programing\project_sgp30\Debug/..\src\am2302/am2302.c:52: first defined here
+collect2.exe: error: ld returned 1 exit status
+01:36:16 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\am2302\am2302.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32L152xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/STM32L1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src\am2302\am2302.o 
+arm-atollic-eabi-gcc -o project_sgp30.elf src\adc\3_adc0.o src\adc\4_calculate_ADC_sensor.o src\am2302\am2302.o src\debug\conv_int_ascii.o src\debug\debug_logs.o src\gpio\7.gpio.o src\i2c\i2c_functions.o src\i2c\i2c_init.o src\i2c\i2c_read_data.o src\i2c\i2c_write_command.o src\interrupt\6.1_UART_interrupt.o src\interrupt\6.external_interrupt.o src\main.o src\sgp30_driver\sgp30.o src\sgp30_driver\sgp30_function.o src\startup_stm32l152xe.o src\system_clock\pllclk_32MHz.o src\system_stm32l1xx.o src\timer\1_systick.o src\timer\5.1_timer_output_toggle_compare.o src\timer\5.2_timer_input_capture.o src\timer\5_timer_autoreload.o src\tiny_printf.o src\uart\uart2.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=project_sgp30.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list project_sgp30.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4452	     12	   1064	   5528	   1598	project_sgp30.elf
+Print size information done
+Generate listing file
+Output sent to: project_sgp30.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for project_sgp30
+01:45:48 **** Incremental Build of configuration Debug for project project_sgp30 ****
+Info: Internal Builder is used for build
+C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list project_sgp30.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   4452	     12	   1064	   5528	   1598	project_sgp30.elf
+Print size information done
+Generate listing file
+Output sent to: project_sgp30.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for project_sgp30
+Info: Nothing to build for project_sgp30
