@@ -2,4 +2,4 @@
 STM32L152RE bare metal
 
 ### Result:
-![Description of the image](/img/2025-07-28_215934.jpg)
+![Description of the image](~/img/2025-07-28_215934.jpg)
