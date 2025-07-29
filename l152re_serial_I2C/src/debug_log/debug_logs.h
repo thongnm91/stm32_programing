@@ -1,9 +1,9 @@
+#include "include.h"
+
 #ifndef DEBUG_LOGS
 #define DEBUG_LOGS
-#include <string.h>
-#include <stdint.h>
 
-#define LOG_LENGH 	50
+#define LOG_LENGH 	100
 //#include "include.h"
 typedef enum{
 	DONE = 0,

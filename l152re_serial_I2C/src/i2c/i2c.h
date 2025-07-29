@@ -1,10 +1,10 @@
+#include "include.h"
+#include "debug_log/debug_logs.h"
+
 #ifndef I2C_H
 #define I2C_H
 
-#include "debug_log/debug_logs.h"
-#include <stdint.h>
-#include <stddef.h>
-#include "stm32l1xx.h"
+
 
 #define TIMEOUT	100000000 //100us
 

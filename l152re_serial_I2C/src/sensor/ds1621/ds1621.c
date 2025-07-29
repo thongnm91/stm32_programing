@@ -1,26 +1,49 @@
-//#include "include.h"
+#include "ds1621.h"
 
-/*Command p10/16*/
-#define ADDR_FOR_WRITE 0x48	//
-#define ADDR_FOR_READ 0x48  //
-#define START_CONVERSATION 0xEE 	//
-#define STOP_CONVERSATION 0x22 	//
-#define READ_LAST_RESULT 0xAA	//
-#define READ_COUNT_REMAIN 0xA8	//
-#define READ_COUNT_PER_C 0xA9	//
 
-void ds1621_start(void){
+
+int ds1621_start(){
 	//Send start conversion command to DS1621 sensor via I2C.
-	I2C1_ByteWrite(ADDR_FOR_WRITE,START_CONVERSATION); 			//start conversion
+	check_pass(I2C_Start(),"---I2C_Start");
+	check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
+	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	check_pass(I2C_Write_Data(CMD_START_CONVERSATION),"---CMD_START_CONVERSATION");
+	check_pass(I2C_Stop(),"---I2C_Stop");
 	systickDelayMs(100);
+	return DONE;
 }
 
-void ds1621_read_temperature(char *data){
-	I2C1_bursRead(ADDR_FOR_READ,READ_LAST_RESULT,2,data);
+int ds1621_read_temperature(uint8_t *data, uint8_t nbyte){
+	check_pass(I2C_Start(),"---I2C_Start");
+	check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
+	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	check_pass(I2C_Write_Data(CMD_READ_LAST_RESULT),"---CMD_START_CONVERSATION");
+	systickDelayMs(10);
+
+	check_pass(I2C_Start(),"---I2C_Start");
+	check_pass(I2C_Write_Addr((DS1621_ADDR << 1) | 1),"---I2C_Write_Addr + R");
+	check_pass(I2C_EN_ACK(),"---I2C_EN_ACK");
+	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	for(int i=0; i<nbyte;i++)
+	{
+		//Handle last byte - send NACK and STOP before read
+		if(i==nbyte-1){
+			check_pass(I2C_DI_ACK(),"---I2C_DI_ACK");
+			check_pass(I2C_Stop(),"---I2C_Stop");
+		}
+		while(!(I2C1->SR1 & I2C_SR1_RXNE)){}
+		data[i] = I2C1->DR;
+	}
+
+	  data[1] = data[1]==128 ? 5:0 ;
+
+
+	return DONE;
 }
+
 void ds1621_read_count_per_c(char *data){
-	I2C1_byteRead(ADDR_FOR_READ,READ_COUNT_PER_C,data);
+	//I2C1_byteRead(ADDR_FOR_READ,READ_COUNT_PER_C,data);
 }
 void ds1621_read_count_remain(char *data){
-	 I2C1_byteRead(ADDR_FOR_READ,READ_COUNT_REMAIN,data);
+	 //I2C1_byteRead(ADDR_FOR_READ,READ_COUNT_REMAIN,data);
 }

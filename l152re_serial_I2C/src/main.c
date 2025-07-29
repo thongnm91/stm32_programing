@@ -28,10 +28,7 @@ SOFTWARE.
 */
 
 /* Includes */
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
-#include "stm32l1xx.h"
+#include "include.h"
 
 #include "debug_log/debug_logs.h"
 #include "uart2/uart2.h"
@@ -40,7 +37,7 @@ SOFTWARE.
 #include "timer/timer.h"
 #include "sensor/sgp30/sgp30.h"
 #include "sensor/am2302/am2302.h"
-
+#include "sensor/ds1621/ds1621.h"
 
 typedef struct {
 	uint16_t co2;
@@ -52,8 +49,7 @@ typedef struct {
 	float tem;
 	float hum;
 	uint8_t data[4];
-	float ah; //absolute humidity
-} AM2302_Data_t;
+} Tem_Hum_Data_t;
 
 
 /**
@@ -73,37 +69,58 @@ int main(void)
 
 	uart2_write_string("---------------------\n\r");
 
+
 	/*
 	 * 1. AM2302 TEMPER/HUMI - 1-wire
 	 *
 	 */
-	AM2302_Data_t am2302;
+	Tem_Hum_Data_t am2302;
 
   /**
-   * 1. SGP30 GAS CO2 - I2C
+   * 2. SGP30 GAS CO2 - I2C
   */
 	SGP30_Data_t sgp30;
 	check_pass(SGP30_Init(),"SGP30_Init");
 
+	/*
+	 * 3. DS1621 Temperature / Humidity
+	 * */
+	Tem_Hum_Data_t ds1621;
+
   /* Infinite loop */
   while (1)
   {
+	  check_pass(LED_Toggle(),"LED_Toggle");
+
 	check_pass(am2302Request(am2302.data),"am2302Request");
 //	check_pass(am2302ShowUart2(am2302.data),"am2302ShowUart2");
 	check_pass(AM2302_Read_Data(&am2302.hum,&am2302.tem,am2302.data),"AM2302_Read_Data");
 
+	check_pass(ds1621_start(),"ds1621_start");
+	check_pass(ds1621_read_temperature(ds1621.data,2),"ds1621_read_temperature");
+
 	check_pass(SGP30_SET_AH(am2302.hum,am2302.tem,&sgp30.ah),"SGP30_SET_AH");
 	check_pass(SGP30_Measure(&sgp30.co2,&sgp30.tvoc),"SGP30_Measure");
-	sprintf(buf,"TEMP: %d.%d - HUMI: %d.%d\n\r",
+
+	sprintf(buf,"AM2302> TEMP: %d.%d - HUMI: %d.%d\n\r",
 			(int)am2302.tem,
-			(int)am2302.tem%10,
+			(int)(am2302.tem*10)%10,
 			(int)am2302.hum,
-			(int)am2302.hum%10);
-	uart2_write_string(buf);
-	sprintf(buf,"CO2: %u - TVOC: %u - AH: %d.%d\n\r",sgp30.co2,sgp30.tvoc,(int)sgp30.ah,(int)sgp30.ah%10);
+			(int)(am2302.hum*10)%10);
 	uart2_write_string(buf);
 
-	check_pass(LED_Toggle(),"LED_Toggle");
+	sprintf(buf,"DS1621> TEMP: %d.%d\n\r",
+			(int)ds1621.data[0],
+			(int)ds1621.data[1]);
+	uart2_write_string(buf);
+
+	sprintf(buf,"SGP30> CO2: %u - TVOC: %u - AH: %d.%d\n\r",
+			sgp30.co2,sgp30.tvoc,
+			(int)sgp30.ah,
+			(int)(sgp30.ah*10)%10);
+	uart2_write_string(buf);
+
+	GPIOA->ODR = GPIO_ODR_ODR_5;
 	systickDelayMs(3000);
   }
   return 0;
@@ -122,8 +139,8 @@ int Initial(){
 int LED_Toggle(){
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
 	GPIOA->MODER |= GPIO_MODER_MODER5_0;
+//	GPIOA->ODR &= ~GPIO_ODR_ODR_5;
+//	systickDelayMs(500);
 	GPIOA->ODR &= ~GPIO_ODR_ODR_5;
-	systickDelayMs(500);
-	GPIOA->ODR = GPIO_ODR_ODR_5;
 	return DONE;
 }

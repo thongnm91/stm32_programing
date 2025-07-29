@@ -1,14 +1,12 @@
-#ifndef SGP30_H
-#define SGP30_H
-//#include "include.h"
+#include "include.h"
+
 #include "debug_log/debug_logs.h"
 #include "i2c/i2c.h"
-#include <stddef.h>
-#include <stdint.h>
-#include "stm32l1xx.h"
 #include "uart2/uart2.h"
 #include "timer/timer.h"
-#include <math.h>
+
+#ifndef SGP30_H
+#define SGP30_H
 
 #define SGP30_ADDR     0x58
 #define CMD_RESET	0x0006

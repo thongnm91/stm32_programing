@@ -1,9 +1,8 @@
+#include "include.h"
+
 #ifndef UART2_H
 #define UART2_H
 
-#include <stdint.h>
-#include <stddef.h>
-#include "stm32l1xx.h"
 
 #define SYS_FREQ 32000000
 #define UART_BAUDRATE 9600
