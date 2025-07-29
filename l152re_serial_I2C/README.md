@@ -1,5 +1,5 @@
 # stm32_programing
-STM32L152RE bare metal
+STM32L152RE bare metal with IDE STM32_TrueStudio
 
 ### Material:
 1. am2302
