@@ -4,32 +4,32 @@
 
 int ds1621_start(){
 	//Send start conversion command to DS1621 sensor via I2C.
-	check_pass(I2C_Start(),"---I2C_Start");
-	check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
-	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
-	check_pass(I2C_Write_Data(CMD_START_CONVERSATION),"---CMD_START_CONVERSATION");
-	check_pass(I2C_Stop(),"---I2C_Stop");
+	I2C_Start();//check_pass(I2C_Start(),"---I2C_Start");
+	I2C_Write_Addr(DS1621_ADDR << 1);//check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
+	I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	I2C_Write_Data(CMD_START_CONVERSATION);//check_pass(I2C_Write_Data(CMD_START_CONVERSATION),"---CMD_START_CONVERSATION");
+	I2C_Stop();//check_pass(I2C_Stop(),"---I2C_Stop");
 	systickDelayMs(100);
 	return DONE;
 }
 
 int ds1621_read_temperature(uint8_t *data, uint8_t nbyte){
-	check_pass(I2C_Start(),"---I2C_Start");
-	check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
-	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
-	check_pass(I2C_Write_Data(CMD_READ_LAST_RESULT),"---CMD_START_CONVERSATION");
+	I2C_Start();//check_pass(I2C_Start(),"---I2C_Start");
+	I2C_Write_Addr(DS1621_ADDR << 1);//check_pass(I2C_Write_Addr(DS1621_ADDR << 1),"---I2C_Write_Addr + W");
+	I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	I2C_Write_Data(CMD_READ_LAST_RESULT);//check_pass(I2C_Write_Data(CMD_READ_LAST_RESULT),"---CMD_START_CONVERSATION");
 	systickDelayMs(10);
 
-	check_pass(I2C_Start(),"---I2C_Start");
-	check_pass(I2C_Write_Addr((DS1621_ADDR << 1) | 1),"---I2C_Write_Addr + R");
-	check_pass(I2C_EN_ACK(),"---I2C_EN_ACK");
-	check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+	I2C_Start();//check_pass(I2C_Start(),"---I2C_Start");
+	I2C_Write_Addr((DS1621_ADDR << 1) | 1);//check_pass(I2C_Write_Addr((DS1621_ADDR << 1) | 1),"---I2C_Write_Addr + R");
+	I2C_EN_ACK();//check_pass(I2C_EN_ACK(),"---I2C_EN_ACK");
+	I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
 	for(int i=0; i<nbyte;i++)
 	{
 		//Handle last byte - send NACK and STOP before read
 		if(i==nbyte-1){
-			check_pass(I2C_DI_ACK(),"---I2C_DI_ACK");
-			check_pass(I2C_Stop(),"---I2C_Stop");
+			I2C_DI_ACK();//check_pass(I2C_DI_ACK(),"---I2C_DI_ACK");
+			I2C_Stop();//check_pass(I2C_Stop(),"---I2C_Stop");
 		}
 		while(!(I2C1->SR1 & I2C_SR1_RXNE)){}
 		data[i] = I2C1->DR;
