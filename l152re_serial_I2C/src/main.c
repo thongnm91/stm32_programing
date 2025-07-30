@@ -73,22 +73,11 @@ int main(void)
 	//LCD_GoToXY(0,0);
 	//LCD_SendString("Temperature");
 
-
-	/*
-	 * 1. AM2302 TEMPER/HUMI - 1-wire
-	 *
-	 */
 	Tem_Hum_Data_t am2302;
 
-  /**
-   * 2. SGP30 GAS CO2 - I2C
-  */
 	SGP30_Data_t sgp30;
 	SGP30_Init();//check_pass(SGP30_Init(),"SGP30_Init");
 
-	/*
-	 * 3. DS1621 Temperature / Humidity
-	 * */
 	Tem_Hum_Data_t ds1621;
 
   /* Infinite loop */
@@ -111,6 +100,7 @@ int main(void)
 
 	ds1621_start();//check_pass(ds1621_start(),"ds1621_start");
 	ds1621_read_temperature(ds1621.data,2);//check_pass(ds1621_read_temperature(ds1621.data,2),"ds1621_read_temperature");
+	ds1621.tem = ds1621.data[0]+ds1621.data[1]/10.0;
 
 	sprintf(buf,"DS1621> TEMP: %d.%d\n\r",
 			(int)ds1621.data[0],
@@ -118,7 +108,7 @@ int main(void)
 	uart2_write_string(buf);
 
 
-	SGP30_SET_AH(am2302.hum,am2302.tem,&sgp30.ah);//check_pass(SGP30_SET_AH(am2302.hum,am2302.tem,&sgp30.ah),"SGP30_SET_AH");
+	SGP30_SET_AH(am2302.hum,ds1621.tem,&sgp30.ah);//check_pass(SGP30_SET_AH(am2302.hum,am2302.tem,&sgp30.ah),"SGP30_SET_AH");
 	SGP30_Measure(&sgp30.co2,&sgp30.tvoc);//check_pass(SGP30_Measure(&sgp30.co2,&sgp30.tvoc),"SGP30_Measure");
 //
 	sprintf(buf,"SGP30> CO2: %u - TVOC: %u - AH: %d.%d\n\r",
@@ -129,17 +119,19 @@ int main(void)
 
 
 	/*LCD*/
-	sprintf(buf,"TEMP:%d.%d",
+	sprintf(buf,"%d.%d C - %d.%d RH",
 				(int)am2302.tem,
-				(int)(am2302.tem*10)%10);
+				(int)(am2302.tem*10)%10,
+				(int)am2302.hum,
+				(int)(am2302.hum*10)%10);
 	LCD_GoToXY(0,0);
 	LCD_SendString(buf);
 
-	sprintf(buf,"HUMI:%d.%d",
-				(int)am2302.hum,
-				(int)(am2302.hum*10)%10);
+	sprintf(buf,"%u %u %d.%d",sgp30.co2,sgp30.tvoc,(int)sgp30.ah,(int)(sgp30.ah*10)%10);
 	LCD_GoToXY(0,1);
 	LCD_SendString(buf);
+
+
 
 	/*LED Toggle*/
 	GPIOA->ODR = GPIO_ODR_ODR_5;
@@ -161,8 +153,6 @@ int Initial(){
 int LED_Toggle(){
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
 	GPIOA->MODER |= GPIO_MODER_MODER5_0;
-//	GPIOA->ODR &= ~GPIO_ODR_ODR_5;
-//	systickDelayMs(500);
 	GPIOA->ODR &= ~GPIO_ODR_ODR_5;
 	return DONE;
 }

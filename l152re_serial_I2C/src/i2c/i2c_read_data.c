@@ -1,28 +1,25 @@
-//#include "i2c.h"
+#include "i2c.h"
 //
-//int I2C1_Read_Data(uint8_t saddr,uint8_t* command, uint8_t c_byte, uint8_t *data, uint8_t d_byte){
-//
-//
-//	/*First frame*/
-//	check_pass(I2C1_Write_Command(saddr,command,c_byte,1),"I2C1_Write_Command");
-//
-//	systickDelayMs(12);	//measurement time p11/19
-//
-//	/*Second frame*/
-//	check_pass(send_startbit(),"Send START bit AGAIN");/*Send START bit*/
-//
-//	check_pass(send_addr_read(saddr),"Send slave's address + read"); /*Send slave's address + bit READ*/
-//
-//	check_pass(send_clear_addr_flag(),"Clears ADDR flag"); /*Reading I2C_SR2 after reading I2C_SR1 clears the ADDR flag p691*/
-//
-//	check_pass(send_ack(),"Enable ACK"); /* Enable ACK for all but the last byte*/
-//
-//	check_pass(read_data(data,d_byte),"READ DATA"); //Read data
-//
-//	check_pass(send_nack(),"Stop ACK");
-//
-//	check_pass(send_stopbit(),"Stop sending");
-//
-//	return 0;
-//}
-//
+int I2C_Read_nData(uint8_t *data, uint8_t len, uint8_t addr) {
+	I2C_Start();//check_pass(I2C_Start(),"---I2C_Start");
+
+	I2C_Write_Addr((addr << 1) | 1);//check_pass(I2C_Write_Addr((SGP30_ADDR << 1) | 1),"---I2C_Write_Addr + R");
+
+	I2C_EN_ACK();//check_pass(I2C_EN_ACK(),"---I2C_EN_ACK");
+
+	I2C_Clear_AddrFlag();//check_pass(I2C_Clear_AddrFlag(),"I2C_Clear_AddrFlag");
+
+	for(int i=0; i<len;i++)
+	{
+		//Handle last byte - send NACK and STOP before read
+		if(i==len-1){
+			I2C_DI_ACK();//check_pass(I2C_DI_ACK(),"---I2C_DI_ACK");
+			I2C_Stop();//check_pass(I2C_Stop(),"---I2C_Stop");
+		}
+
+		while(!(I2C1->SR1 & I2C_SR1_RXNE)){}
+		data[i] = I2C1->DR;
+	}
+
+    return DONE;
+}

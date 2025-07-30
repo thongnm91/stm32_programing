@@ -11,7 +11,7 @@ void LCD_Init(void)
 	*/
 	LCD_SendCommand(0x02);	// set the LCD in 4-bit mode (D4-D7)
 	LCD_SendCommand(0x28);	// 2 lines, 5x8 matrix, 4-bit mode
-	LCD_SendCommand(0x0F);	// Display ON, cursor off
+	LCD_SendCommand(0x0C);	// Display ON, cursor off
 	LCD_SendCommand(0x80);	// Force the cursor to position (0,0)
 }
 void LCD_SendChar(uint8_t c)
@@ -29,11 +29,11 @@ void LCD_SendChar(uint8_t c)
 void LCD_SendCommand(uint8_t cmd)
 {
 	uint8_t nibble_r, nibble_l;
-	uint8_t data[4];
+	uint8_t data[4]; //I²C using a 4-bit communication protocol
 	nibble_l = cmd & 0xf0;
 	nibble_r = (cmd << 4) & 0xf0;
-	data[0] = nibble_l | 0x0C;
-	data[1] = nibble_l | 0x08;
+	data[0] = nibble_l | 0x0C;	//0x0C: Typically, E=1, RS=0 (command mode), and backlight on
+	data[1] = nibble_l | 0x08;	//0x08: E=0, RS=0, backlight on
 	data[2] = nibble_r | 0x0C;
 	data[3] = nibble_r | 0x08;
 	LCD_I2C1_Write(LCD_ADDR, 4,(uint8_t *)data);
@@ -99,22 +99,18 @@ void LCD_I2C1_Write(uint8_t address, int n, uint8_t* data)
 }
 void I2C1_Write_LCD(uint8_t address, int n, uint8_t* data)
 {
-	volatile int tmp;
 	int i;
 
 	while(I2C1->SR2 & 2){}			//wait until bus not busy
 
-	I2C1->CR1 &= ~0x800;			//Acknowledge clear p.682
+	I2C_DI_ACK();				//Acknowledge clear p.682
 	I2C1->CR1 |= 0x100;				//generate start p.694
 	while(!(I2C1->SR1&1)){}			//wait until start condition generated
 
 	I2C1->DR=address<<1;			//transmit slave address
 	while(!(I2C1->SR1 & 2)){}		//wait until end of address transmission p.690
 
-	tmp=I2C1->SR2;					//Reading I2C_SR2 after reading I2C_SR1 clears the ADDR flag p691
-	//while(!(I2C1->SR1 & 0x80)){}	//wait until data register empty p.689
-
-	//I2C1->DR = command;				//send command
+	I2C_Clear_AddrFlag();			//Reading I2C_SR2 after reading I2C_SR1 clears the ADDR flag p691
 
 	//write data
 	for(i=0;i<n;i++)

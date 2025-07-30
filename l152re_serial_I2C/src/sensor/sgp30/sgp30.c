@@ -1,8 +1,8 @@
-#include "sensor/sgp30/sgp30.h"
+#include "sgp30.h"
 
 int SGP30_Init() {
 	I2C1_Bus_Test();//check_pass(I2C1_Bus_Test(),"-I2C1_Bus_Test");
-	SGP30_Write_Cmd(CMD_INIT,STOP);//check_pass(SGP30_Write_Cmd(CMD_INIT,STOP),"-SEND_CMD_INIT");
+	I2C_Write_Cmd(CMD_INIT,STOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_INIT,STOP),"-SEND_CMD_INIT");
     systickDelayMs(10);
     return DONE;
 }
@@ -10,11 +10,11 @@ int SGP30_Init() {
 int SGP30_Measure(uint16_t *co2, uint16_t *tvoc) {
     uint8_t data[6]={0};
 
-    SGP30_Write_Cmd(CMD_MEASURE,NSTOP);//check_pass(SGP30_Write_Cmd(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
+    I2C_Write_Cmd(CMD_MEASURE,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
 
     systickDelayMs(10);
 
-    SGP30_Read_Data(data, 6);//check_pass(SGP30_Read_Data(data, 6),"-READ_CMD_MEASURE");
+    I2C_Read_nData(data, 6,SGP30_ADDR);//check_pass(SGP30_Read_Data(data, 6),"-READ_CMD_MEASURE");
 
     // CRC checks
      if (sgp30_crc(&data[0], 2) != data[2]) {
@@ -34,9 +34,9 @@ int SGP30_Measure(uint16_t *co2, uint16_t *tvoc) {
 }
 int SGP30_SET_AH(float humidity, float temperature, float* ah){
 	*ah = 216.7 * (((humidity/100)*6.112*exp((17.62*temperature)/(243.12+temperature)))/(273.15+ temperature)); //page 10/19
-	SGP30_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP);//check_pass(SGP30_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP),"-CMD_SET_ABSOLUTE_HUMIDITY");
+	I2C_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP),"-CMD_SET_ABSOLUTE_HUMIDITY");
 	systickDelayMs(10);
-	SGP30_Write_Data(CMD_MEASURE,NSTOP);//check_pass(SGP30_Write_Data(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
+	I2C_Write_nData(CMD_MEASURE,NSTOP);//check_pass(SGP30_Write_Data(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
 
 	return DONE;
 }
