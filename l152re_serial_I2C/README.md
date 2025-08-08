@@ -15,7 +15,7 @@ STM32L152RE bare metal with IDE STM32_TrueStudio
 ![Description of the image](img/2025-07-29_232921.jpg)
 
 ### Debug log:
-![](l152re_serial_I2C/img/2025-08-08_224106.jpg)
+![Description](l152re_serial_I2C/img/2025-08-08_224106.jpg)
 ![Description of the image](img/2025-07-29_165742.png)
 
 
