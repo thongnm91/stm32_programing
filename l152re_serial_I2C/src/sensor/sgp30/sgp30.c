@@ -1,16 +1,19 @@
 #include "sgp30.h"
 
+/*write to 0x58 ack data: 0x20 0x03 */
 int SGP30_Init() {
+	uint8_t cmd[2] = {CMD_INIT>>8, CMD_INIT&0xFF};
 	I2C1_Bus_Test();//check_pass(I2C1_Bus_Test(),"-I2C1_Bus_Test");
-	I2C_Write_Cmd(CMD_INIT,STOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_INIT,STOP),"-SEND_CMD_INIT");
-    systickDelayMs(10);
+	I2C_Write_Cmd(cmd,2,STOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_INIT,STOP),"-SEND_CMD_INIT");
+    systickDelayMs(5);
     return DONE;
 }
 
 int SGP30_Measure(uint16_t *co2, uint16_t *tvoc) {
+	uint8_t cmd[2] = {CMD_MEASURE>>8, CMD_MEASURE&0xFF};
     uint8_t data[6]={0};
 
-    I2C_Write_Cmd(CMD_MEASURE,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
+    I2C_Write_Cmd(cmd,2,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
 
     systickDelayMs(10);
 
@@ -33,10 +36,13 @@ int SGP30_Measure(uint16_t *co2, uint16_t *tvoc) {
     return DONE;
 }
 int SGP30_SET_AH(float humidity, float temperature, float* ah){
+	uint8_t cmd[2] = {CMD_SET_ABSOLUTE_HUMIDITY>>8, CMD_SET_ABSOLUTE_HUMIDITY&0xFF};
 	*ah = 216.7 * (((humidity/100)*6.112*exp((17.62*temperature)/(243.12+temperature)))/(273.15+ temperature)); //page 10/19
-	I2C_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP),"-CMD_SET_ABSOLUTE_HUMIDITY");
+	I2C_Write_Cmd(cmd,2,NSTOP,SGP30_ADDR);//check_pass(SGP30_Write_Cmd(CMD_SET_ABSOLUTE_HUMIDITY,NSTOP),"-CMD_SET_ABSOLUTE_HUMIDITY");
 	systickDelayMs(10);
-	I2C_Write_nData(CMD_MEASURE,NSTOP);//check_pass(SGP30_Write_Data(CMD_MEASURE,NSTOP),"-SEND_CMD_MEASURE");
+	I2C_WriteData(CMD_MEASURE >> 8);//check_pass(I2C_Write_Data(cmd >> 8),"---I2C_Write_Data");
+	I2C_WriteData(CMD_MEASURE & 0xFF);//check_pass(I2C_Write_Data(cmd & 0xFF),"---I2C_Write_Data");
+	I2C_StopWrite();//check_pass(I2C_Stop(),"---I2C_Stop");
 
 	return DONE;
 }

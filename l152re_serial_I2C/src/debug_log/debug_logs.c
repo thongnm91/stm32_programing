@@ -18,20 +18,20 @@ void check_pass(int check, char* message){
     }
 
     switch (check){
-    case 0:
+    case DONE:
     	strncat(buf, "DONE\n\r",6);
 		uart2_write_string(buf);
     	break;
-    case 1:
+    case FAIL:
     	strncat(buf, "FAIL\n\r",6);
 		uart2_write_string(buf);
     	break;
-    case 2:
+    case PASS:
     	strncat(buf, "PASS\n\r",7);
 		uart2_write_string(buf);
 		break;
-    case 3:
-		strncat(buf, "PASS\n\r",7);
+    case START:
+		strncat(buf, "START\n\r",7);
 		uart2_write_string(buf);
 		break;
     case TIMEOUT:

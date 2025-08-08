@@ -29,8 +29,5 @@ int sgp30_crc(uint8_t *data, int count) ;
 int SGP30_Write_Data(uint16_t cmd,uint8_t condition) ;
 int SGP30_SET_AH(float humidity, float temperature, float* ah);
 
-typedef enum{
-	NSTOP=0,
-	STOP,
-} Config_Write_Cmd;
+
 #endif

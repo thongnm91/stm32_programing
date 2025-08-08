@@ -14,7 +14,7 @@ int I2C_Read_nData(uint8_t *data, uint8_t len, uint8_t addr) {
 		//Handle last byte - send NACK and STOP before read
 		if(i==len-1){
 			I2C_DI_ACK();//check_pass(I2C_DI_ACK(),"---I2C_DI_ACK");
-			I2C_Stop();//check_pass(I2C_Stop(),"---I2C_Stop");
+			I2C_StopRead();//check_pass(I2C_Stop(),"---I2C_Stop");
 		}
 
 		while(!(I2C1->SR1 & I2C_SR1_RXNE)){}

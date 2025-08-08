@@ -6,7 +6,7 @@ int I2C_Start() {
     while(!(I2C1->SR1 & I2C_SR1_SB));	//SB: Start bit (Master mode) p690
     return DONE;
 }
-
+/*page 671/911 */
 int I2C_Write_Addr(uint8_t addr) {
     I2C1->DR = addr;
     while(I2C1->SR1 & I2C_SR1_AF){}	//BTF: Byte transfer finished p690
@@ -14,20 +14,28 @@ int I2C_Write_Addr(uint8_t addr) {
     return DONE;
 }
 
-int I2C_Write_Data(uint8_t data) {
-    while(!(I2C1->SR1 & I2C_SR1_TXE)){}	//TxE: Data register empty (transmitters)  p689
-    I2C1->DR = data;
-    while(I2C1->SR1 & I2C_SR1_AF){}	//ACK
-    while(I2C1->SR1 & I2C_SR1_BTF){} //BTF: Byte transfer finished p690
-    return DONE;
+void I2C_WriteData(uint8_t data)
+{
+	while(!(I2C1->SR1 & I2C_SR1_TXE)){} //TXE p689
+	I2C1->DR = data;
+	while(I2C1->SR1 & I2C_SR1_AF){}
 }
+
 int I2C_Read_Data(uint8_t* data){
 	while(!(I2C1->SR1 & I2C_SR1_RXNE)){}	//RxNE: Data register not empty (receivers)  p689
 	*data++ = I2C1->DR;
 	return DONE;
 }
 
-int I2C_Stop() {
+int I2C_StopRead() {
+	while(!(I2C1->SR1 & I2C_SR1_RXNE)){}
+	I2C_DI_ACK();
+    I2C1->CR1 |= I2C_CR1_STOP;
+    return DONE;
+}
+int I2C_StopWrite() {
+	while(!(I2C1->SR1 & I2C_SR1_TXE)){}
+	while(!(I2C1->SR1 & I2C_SR1_BTF)){}
     I2C1->CR1 |= I2C_CR1_STOP;
     return DONE;
 }

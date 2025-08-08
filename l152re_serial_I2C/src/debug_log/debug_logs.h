@@ -1,4 +1,5 @@
 #include "include.h"
+#include "uart2/uart2.h"
 
 #ifndef DEBUG_LOGS
 #define DEBUG_LOGS
@@ -7,7 +8,9 @@
 //#include "include.h"
 typedef enum{
 	DONE = 0,
-	FAIL,
+	NSTOP = 0,
+	STOP = 1,
+	FAIL = 1,
 	PASS,
 	START,
 	TIMEOUT,

@@ -39,6 +39,7 @@ SOFTWARE.
 #include "sensor/am2302/am2302.h"
 #include "sensor/ds1621/ds1621.h"
 #include "sensor/lcd1602/lcd1602.h"
+#include "sensor/bmp085/bmp085.h"
 
 typedef struct {
 	uint16_t co2;
@@ -52,6 +53,11 @@ typedef struct {
 	uint8_t data[4];
 } Tem_Hum_Data_t;
 
+typedef struct {
+	float tem;
+	float pres;
+	uint8_t data[2];
+} BMP084_Data_t;
 
 /**
 **===========================================================================
@@ -70,15 +76,18 @@ int main(void)
 
 	LCD_Init();
 	LCD_ClearAll();
-	//LCD_GoToXY(0,0);
-	//LCD_SendString("Temperature");
+	LCD_GoToXY(0,0);
+	LCD_SendString("Temperature");
 
 	Tem_Hum_Data_t am2302;
+	Tem_Hum_Data_t ds1621;
 
 	SGP30_Data_t sgp30;
 	SGP30_Init();//check_pass(SGP30_Init(),"SGP30_Init");
 
-	Tem_Hum_Data_t ds1621;
+
+	bmp085_calibration_param cal;
+	bmp085_get_cal_param(&cal);
 
   /* Infinite loop */
   while (1)
@@ -90,7 +99,7 @@ int main(void)
 //	check_pass(am2302ShowUart2(am2302.data),"am2302ShowUart2");
 	  AM2302_Read_Data(&am2302.hum,&am2302.tem,am2302.data);//check_pass(AM2302_Read_Data(&am2302.hum,&am2302.tem,am2302.data),"AM2302_Read_Data");
 
-	sprintf(buf,"AM2302> TEMP: %d.%d - HUMI: %d.%d\n\r",
+	sprintf(buf,"AM2302> oC: %d.%d - RH: %d.%d\n\r",
 			(int)am2302.tem,
 			(int)(am2302.tem*10)%10,
 			(int)am2302.hum,
@@ -102,7 +111,7 @@ int main(void)
 	ds1621_read_temperature(ds1621.data,2);//check_pass(ds1621_read_temperature(ds1621.data,2),"ds1621_read_temperature");
 	ds1621.tem = ds1621.data[0]+ds1621.data[1]/10.0;
 
-	sprintf(buf,"DS1621> TEMP: %d.%d\n\r",
+	sprintf(buf,"DS1621> oC: %d.%d\n\r",
 			(int)ds1621.data[0],
 			(int)ds1621.data[1]);
 	uart2_write_string(buf);
@@ -115,6 +124,20 @@ int main(void)
 			sgp30.co2,sgp30.tvoc,
 			(int)sgp30.ah,
 			(int)(sgp30.ah*10)%10);
+	uart2_write_string(buf);
+
+
+	uint16_t ut = bmp085_get_ut();
+	uint32_t up = bmp085_get_up(3);
+	int32_t temperature = bmp085_calculate_temperature(ut, &cal);
+	uint32_t true_pressure = bmp085_calculate_pressure(up, ut, 3, &cal);
+	double true_altitude = bmp085_calculate_altitude(&true_pressure);
+	sprintf(buf,"BMP085> oC: %d.%d - Pa: %d - m: %d.%d\n\r",
+			(int)temperature/10,
+			(int)temperature%10,
+			(int)true_pressure,
+			(int)true_altitude,
+			(int)true_altitude%10);
 	uart2_write_string(buf);
 
 

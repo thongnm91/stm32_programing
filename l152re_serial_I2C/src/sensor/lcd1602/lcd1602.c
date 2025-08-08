@@ -9,6 +9,13 @@ void LCD_Init(void)
 	https://mil.ufl.edu/3744/docs/lcdmanual/commands.html
 	https://www.robofun.ro/docs/rc1602b-biw-esx.pdf
 	*/
+	/*
+	write to 0x27 ack data: 0x0C 0x08 0x2C 0x28
+	write to 0x27 ack data: 0x2C 0x28 0x8C 0x88
+	write to 0x27 ack data: 0x0C 0x08 0xCC 0xC8
+	write to 0x27 ack data: 0x8C 0x88 0x0C 0x08
+	*/
+
 	LCD_SendCommand(0x02);	// set the LCD in 4-bit mode (D4-D7)
 	LCD_SendCommand(0x28);	// 2 lines, 5x8 matrix, 4-bit mode
 	LCD_SendCommand(0x0C);	// Display ON, cursor off
@@ -39,6 +46,7 @@ void LCD_SendCommand(uint8_t cmd)
 	LCD_I2C1_Write(LCD_ADDR, 4,(uint8_t *)data);
 }
 
+/**/
 void LCD_SendString(char *str)
 {
 	while (*str)
@@ -55,6 +63,7 @@ void DisplayOnLCD(int value, char data_line1[], char data_line2[])
 	LCD_SendString(data_line2);
 }
 
+/*write to 0x27 ack data: 0x8C 0x88 0x0C 0x08 */
 void LCD_GoToXY(uint8_t x, uint8_t y)
 {
 	uint8_t LCD_DDRAM_ADDR = 0x80;
@@ -65,6 +74,7 @@ void LCD_GoToXY(uint8_t x, uint8_t y)
 		LCD_SendCommand(LCD_DDRAM_ADDR | (LCD_LINE_2 + x));
 }
 
+/*write to 0x27 ack data: 0x0C 0x08 0x1C 0x18 */
 void LCD_ClearAll(void)
 {
 	LCD_SendCommand(0x01); // 0x01 is the command to clear the LCD display
@@ -94,7 +104,7 @@ void LCD_I2C1_Write(uint8_t address, int n, uint8_t* data)
 		I2C1->DR=*data++;				//send command
 	}
 	while(!(I2C1->SR1 & 4)){}		//wait until byte transfer finished p.690
-	I2C_Stop();//check_pass(I2C_Stop(),"I2C_Stop");
+	I2C_StopWrite();//check_pass(I2C_Stop(),"I2C_Stop");
 	systickDelayMs(2);
 }
 void I2C1_Write_LCD(uint8_t address, int n, uint8_t* data)
